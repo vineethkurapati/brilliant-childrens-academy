@@ -1,0 +1,347 @@
+/* Custom CSS for Brilliant Childrens Academy */
+
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --success-color: #28a745;
+    --info-color: #17a2b8;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+    --purple-color: #6f42c1;
+}
+
+/* Global Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+}
+
+.bg-purple {
+    background-color: var(--purple-color) !important;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--info-color) 100%);
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+}
+
+.school-name {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-buttons .btn {
+    animation: fadeInUp 1s ease-out 0.5s both;
+}
+
+/* Photo Gallery */
+.gallery-section {
+    background-color: var(--light-color);
+}
+
+.photo-gallery {
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.photo-item {
+    animation: floatRandom 6s ease-in-out infinite;
+}
+
+.photo-card {
+    width: 200px;
+    height: 200px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.photo-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+@keyframes floatRandom {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    25% { transform: translateY(-10px) rotate(1deg); }
+    50% { transform: translateY(-5px) rotate(-1deg); }
+    75% { transform: translateY(-15px) rotate(0.5deg); }
+}
+
+.photo-item:nth-child(2n) {
+    animation-delay: 1s;
+    animation-duration: 7s;
+}
+
+.photo-item:nth-child(3n) {
+    animation-delay: 2s;
+    animation-duration: 8s;
+}
+
+.photo-item:nth-child(4n) {
+    animation-delay: 3s;
+    animation-duration: 5s;
+}
+
+/* Features Section */
+.feature-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.feature-icon {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Section Titles */
+.section-title {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), var(--info-color));
+    border-radius: 2px;
+}
+
+/* Textbooks Page */
+.grade-card-inner {
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.grade-card-inner:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.grade-icon {
+    transition: all 0.3s ease;
+}
+
+.grade-card:hover .grade-icon i {
+    transform: scale(1.1);
+    color: var(--success-color) !important;
+}
+
+/* Subject Cards */
+.subject-card {
+    transition: all 0.3s ease;
+}
+
+.subject-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.textbook-item {
+    transition: all 0.2s ease;
+}
+
+.textbook-item:hover {
+    background-color: var(--light-color) !important;
+    transform: translateX(5px);
+}
+
+/* Login Page */
+.card {
+    border: none;
+    border-radius: 15px;
+}
+
+.card-header {
+    border-radius: 15px 15px 0 0 !important;
+    border-bottom: none;
+}
+
+.form-control, .form-select {
+    border-radius: 8px;
+    border: 2px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.btn {
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+/* Footer */
+footer {
+    margin-top: auto;
+}
+
+.footer-links a {
+    transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--warning-color) !important;
+    text-decoration: underline !important;
+}
+
+/* Contact Page */
+.contact-item h6 {
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 5px;
+}
+
+/* Location Page */
+.map-placeholder {
+    border: 2px dashed #dee2e6;
+    border-radius: 8px;
+}
+
+/* About Page */
+.stat-card {
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: scale(1.05);
+}
+
+.feature-item .feature-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+}
+
+/* Animations */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: 50vh;
+        text-align: center;
+    }
+    
+    .school-name {
+        font-size: 2.5rem !important;
+    }
+    
+    .photo-card {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .gallery-container {
+        gap: 15px;
+    }
+    
+    .hero-buttons .btn {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    .card-body {
+        padding: 1.5rem !important;
+    }
+}
+
+/* Loading Animation */
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255,255,255,.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--info-color);
+}

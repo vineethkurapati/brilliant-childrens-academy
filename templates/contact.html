@@ -1,0 +1,153 @@
+{% extends "base.html" %}
+
+{% block title %}Contact Us - Brilliant Childrens Academy{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row">
+        <div class="col-12 text-center mb-5">
+            <h2 class="section-title">Contact Us</h2>
+            <p class="text-muted">Get in touch with us for any inquiries</p>
+        </div>
+    </div>
+    
+    <div class="row g-5">
+        <div class="col-lg-8">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">
+                        <i class="fas fa-envelope me-2"></i>Send us a Message
+                    </h5>
+                </div>
+                <div class="card-body p-4">
+                    <form>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="firstName" class="form-label">First Name</label>
+                                <input type="text" class="form-control" id="firstName" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="lastName" class="form-label">Last Name</label>
+                                <input type="text" class="form-control" id="lastName" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="phone" class="form-label">Phone</label>
+                                <input type="tel" class="form-control" id="phone">
+                            </div>
+                            <div class="col-12">
+                                <label for="subject" class="form-label">Subject</label>
+                                <select class="form-select" id="subject" required>
+                                    <option value="">Select Subject</option>
+                                    <option value="admission">Admission Inquiry</option>
+                                    <option value="academic">Academic Information</option>
+                                    <option value="facilities">Facilities</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" rows="5" required></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary btn-lg">
+                                    <i class="fas fa-paper-plane me-2"></i>Send Message
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4">
+            <div class="contact-info">
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body p-4">
+                        <h5 class="card-title text-primary mb-3">
+                            <i class="fas fa-map-marker-alt me-2"></i>Address
+                        </h5>
+                        <p class="mb-0">
+                            123 Education Street<br>
+                            Knowledge City, KC 12345<br>
+                            United States
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body p-4">
+                        <h5 class="card-title text-primary mb-3">
+                            <i class="fas fa-phone me-2"></i>Phone
+                        </h5>
+                        <p class="mb-2">
+                            <strong>Main Office:</strong><br>
+                            <a href="tel:+1234567890" class="text-decoration-none">(123) 456-7890</a>
+                        </p>
+                        <p class="mb-0">
+                            <strong>Admissions:</strong><br>
+                            <a href="tel:+1234567891" class="text-decoration-none">(123) 456-7891</a>
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body p-4">
+                        <h5 class="card-title text-primary mb-3">
+                            <i class="fas fa-envelope me-2"></i>Email
+                        </h5>
+                        <p class="mb-2">
+                            <strong>General:</strong><br>
+                            <a href="mailto:info@brilliantacademy.edu" class="text-decoration-none">info@brilliantacademy.edu</a>
+                        </p>
+                        <p class="mb-0">
+                            <strong>Admissions:</strong><br>
+                            <a href="mailto:admissions@brilliantacademy.edu" class="text-decoration-none">admissions@brilliantacademy.edu</a>
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card shadow-sm">
+                    <div class="card-body p-4">
+                        <h5 class="card-title text-primary mb-3">
+                            <i class="fas fa-clock me-2"></i>Office Hours
+                        </h5>
+                        <p class="mb-2">
+                            <strong>Monday - Friday:</strong><br>
+                            8:00 AM - 5:00 PM
+                        </p>
+                        <p class="mb-0">
+                            <strong>Saturday:</strong><br>
+                            9:00 AM - 2:00 PM
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Contact form submission
+    document.querySelector('form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Show success message
+        const alert = document.createElement('div');
+        alert.className = 'alert alert-success alert-dismissible fade show';
+        alert.innerHTML = `
+            <i class="fas fa-check-circle me-2"></i>
+            Thank you for your message! We'll get back to you soon.
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        `;
+        
+        this.parentNode.insertBefore(alert, this);
+        this.reset();
+    });
+</script>
+{% endblock %}

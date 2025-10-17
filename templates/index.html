@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section bg-gradient-primary text-white py-5">
+    <div class="container text-center">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <h1 class="display-3 fw-bold mb-4 school-name">Brilliant Childrens Academy</h1>
+                <p class="lead mb-4">Empowering young minds through quality education and innovative learning experiences</p>
+                <div class="hero-buttons">
+                    <a href="{{ url_for('textbooks') }}" class="btn btn-light btn-lg me-3">
+                        <i class="fas fa-book me-2"></i>View Textbooks
+                    </a>
+                    {% if not session.username %}
+                        <a href="{{ url_for('login') }}" class="btn btn-outline-light btn-lg">
+                            <i class="fas fa-sign-in-alt me-2"></i>Login
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Photo Gallery Section -->
+<section class="gallery-section py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mb-5">
+                <h2 class="section-title">School Activities</h2>
+                <p class="text-muted">Capturing moments of learning, growth, and joy</p>
+            </div>
+        </div>
+        
+        <div class="photo-gallery">
+            <div class="gallery-container">
+                <div class="photo-item" style="animation-delay: 0s;">
+                    <div class="photo-card bg-success">
+                        <i class="fas fa-music fa-3x text-white"></i>
+                        <h5 class="text-white mt-3">Music Concert</h5>
+                    </div>
+                </div>
+                
+                <div class="photo-item" style="animation-delay: 1s;">
+                    <div class="photo-card bg-purple">
+                        <i class="fas fa-theater-masks fa-3x text-white"></i>
+                        <h5 class="text-white mt-3">Drama Performance</h5>
+                    </div>
+                </div>
+                
+                <div class="photo-item" style="animation-delay: 2s;">
+                    <div class="photo-card bg-info">
+                        <i class="fas fa-route fa-3x text-white"></i>
+                        <h5 class="text-white mt-3">Field Trip</h5>
+                    </div>
+                </div>
+                
+                <div class="photo-item" style="animation-delay: 3s;">
+                    <div class="photo-card bg-warning">
+                        <i class="fas fa-flask fa-3x text-white"></i>
+                        <h5 class="text-white mt-3">Science Lab</h5>
+                    </div>
+                </div>
+                
+                <div class="photo-item" style="animation-delay: 4s;">
+                    <div class="photo-card bg-danger">
+                        <i class="fas fa-running fa-3x text-white"></i>
+                        <h5 class="text-white mt-3">Sports Day</h5>
+                    </div>
+                </div>
+                
+                <div class="photo-item" style="animation-delay: 5s;">
+                    <div class="photo-card bg-secondary">
+                        <i class="fas fa-palette fa-3x text-white"></i>
+                        <h5 class="text-white mt-3">Art Exhibition</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="features-section py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mb-5">
+                <h2 class="section-title">Why Choose Us?</h2>
+            </div>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="feature-card text-center p-4">
+                    <div class="feature-icon bg-primary text-white rounded-circle mx-auto mb-3">
+                        <i class="fas fa-chalkboard-teacher fa-2x"></i>
+                    </div>
+                    <h5>Expert Teachers</h5>
+                    <p class="text-muted">Qualified and experienced educators dedicated to student success</p>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="feature-card text-center p-4">
+                    <div class="feature-icon bg-success text-white rounded-circle mx-auto mb-3">
+                        <i class="fas fa-laptop fa-2x"></i>
+                    </div>
+                    <h5>Modern Technology</h5>
+                    <p class="text-muted">State-of-the-art facilities and digital learning resources</p>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="feature-card text-center p-4">
+                    <div class="feature-icon bg-info text-white rounded-circle mx-auto mb-3">
+                        <i class="fas fa-users fa-2x"></i>
+                    </div>
+                    <h5>Small Class Sizes</h5>
+                    <p class="text-muted">Personalized attention for every student's unique needs</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
